@@ -3,7 +3,35 @@ html
 	head
 		title="Strona logowanie"
 	body(style={background:"#bbbbbb"})
-		div(style={background:"#847f7f", "margin":"50px auto", padding:"100px", width:"200px"})
+		div(style=
+			{
+				background:"#847f7f", 
+				"margin":"50px auto", 
+				padding:"100px", 
+				width:"200px"
+			}
+		)
 			include ./header.pug
-			input#ala(placeholder="wpisz swoje dane")
+			form(action="http://localhost:3000/afterlog" method="GET")
+				input(
+					type="text"
+					name="login_name"
+					placeholder=placeholder
+					style=
+					{
+						"width": "98%"
+					}
+				)
+				button(
+					type="submit"
+					value="submit"
+					style=
+					{	
+						"width": "100%",
+						"margin-top": "10px",
+						"background": "#aaaaaa",
+						"text-transform": "uppercase",
+						"color": "white"
+					}
+				) Loguj
 			include ./footer.pug
